@@ -1,8 +1,8 @@
-import androidDeps.groupDependencies.*
-import groupConfigs.androidLib
-import groupDependencyModuleLevel.baseDependenciesAndroid
-import groupDependencyModuleLevel.featureModuleBaseDependencies
-import kotlinDeps.groupDependencies.*
+import androidDeps.groupDeps.glide
+import androidDeps.groupDeps.room
+import configs.androidLib
+import groupDepsModuleLevel.baseAndroidDependencies
+import kotlinDeps.groupDeps.networking
 import modules.Modules
 
 plugins {
@@ -14,13 +14,14 @@ plugins {
         id(ANDROID_EXTENSIONS)
     }
 }
-androidLib(listOf(Pair("BASE_URL", "\"https://jsonplaceholder.typicode.com\"")))
+androidLib {
+    buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com\"")
+}
 dependencies {
     implementation(project(Modules.Data.DATA_LOCAL))
     implementation(project(Modules.Utility.BASES))
 
-    baseDependenciesAndroid()
-    featureModuleBaseDependencies()
+    baseAndroidDependencies()
     room()
     networking()
     glide()

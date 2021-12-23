@@ -1,4 +1,4 @@
-package test
+package testDeps
 
 object Test {
     private const val coreVersion = "1.4.0-alpha06"

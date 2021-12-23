@@ -1,4 +1,4 @@
-package kotlinDeps.groupDependencies
+package kotlinDeps.groupDeps
 
 import kotlinDeps.Kotlin
 import org.gradle.api.artifacts.dsl.DependencyHandler

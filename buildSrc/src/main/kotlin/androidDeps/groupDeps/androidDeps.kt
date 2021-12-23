@@ -1,4 +1,4 @@
-package androidDeps.groupDependencies
+package androidDeps.groupDeps
 
 import androidDeps.AndroidX
 import org.gradle.api.artifacts.dsl.DependencyHandler

@@ -1,5 +1,5 @@
-import groupDependencyModuleLevel.baseDependencies
-import kotlinDeps.groupDependencies.networking
+import groupDepsModuleLevel.baseDependencies
+import kotlinDeps.groupDeps.networking
 import modules.Modules
 
 plugins {

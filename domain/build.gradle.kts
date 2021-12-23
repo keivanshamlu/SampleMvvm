@@ -1,5 +1,5 @@
 import modules.Modules
-import groupDependencyModuleLevel.baseDependencies
+import groupDepsModuleLevel.baseDependencies
 
 plugins {
     GradlePluginId.apply {

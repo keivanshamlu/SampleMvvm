@@ -1,10 +1,10 @@
-package groupDependencyModuleLevel
+package groupDepsModuleLevel
 
-import androidDeps.groupDependencies.*
-import kotlinDeps.groupDependencies.kotlinCoroutines
+import androidDeps.groupDeps.*
+import kotlinDeps.groupDeps.kotlinCoroutines
 import org.gradle.api.artifacts.dsl.DependencyHandler
-import test.groupDependencies.test
-import test.groupDependencies.testAndroid
+import testDeps.groupDeps.test
+import testDeps.groupDeps.testAndroid
 
 fun DependencyHandler.baseDependencies() {
     kotlinCoroutines()
@@ -12,7 +12,7 @@ fun DependencyHandler.baseDependencies() {
     test()
     arch()
 }
-fun DependencyHandler.baseDependenciesAndroid() {
+fun DependencyHandler.baseAndroidDependencies() {
     baseDependencies()
     daggerAndroid()
     testAndroid()
@@ -22,4 +22,7 @@ fun DependencyHandler.featureModuleBaseDependencies() {
     fragment()
     lifeCycle()
     arch()
+    naviagtion()
+    databinding()
+    daggerAssisted()
 }

@@ -1,18 +1,22 @@
-package groupConfigs
+package configs
 
-import com.android.build.gradle.BaseExtension
-import com.android.build.gradle.internal.dsl.DefaultConfig
-import org.gradle.api.JavaVersion
-import org.gradle.api.Project
 import androidDeps.AppConfig
 import androidDeps.PackagingOptions
+import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.internal.dsl.DefaultConfig
+import groupDepsModuleLevel.baseAndroidDependencies
+import groupDepsModuleLevel.featureModuleBaseDependencies
+import org.gradle.api.JavaVersion
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.dependencies
 
 const val test = "test"
 const val androidTest = "androidTest"
 const val sharedTestDir = "src/sharedTest/java"
 
 val Project.android: BaseExtension
-    get() = extensions.findByName("android") as? BaseExtension ?: error("$name is not an android module")
+    get() = extensions.findByName("android") as? BaseExtension
+        ?: error("$name is not an android module")
 
 fun Project.androidApp(appId: String) {
     androidLib {
@@ -21,8 +25,8 @@ fun Project.androidApp(appId: String) {
 }
 
 fun Project.androidLib(
-    fields: List<Pair<String, String>>? = null,
-    default: (DefaultConfig.() -> Unit)? = null) {
+    default: (DefaultConfig.() -> Unit)? = null
+) {
     android.run {
         compileSdkVersion(AppConfig.compileSdk)
         defaultConfig {
@@ -33,7 +37,6 @@ fun Project.androidLib(
                 default?.invoke(this@defaultConfig)
                 minSdk = minimumSdkVersion
                 targetSdk = targettSdkVersion
-                fields?.map { buildConfigField("String", it.first, it.second) }
                 testInstrumentationRunner = androidTestInstrumentation
             }
         }
@@ -50,9 +53,22 @@ fun Project.androidLib(
         }
         excludePackages()
     }
+    dependencies {
+        baseAndroidDependencies()
+    }
 }
 
-fun Project.excludePackages(){
+fun Project.androidFeature(
+    default: (DefaultConfig.() -> Unit)? = null
+) {
+
+    androidLib(default)
+    dependencies {
+        featureModuleBaseDependencies()
+    }
+}
+
+fun Project.excludePackages() {
     android.run {
         PackagingOptions.run {
             packagingOptions.excludes.add(DEPENDENCIES)

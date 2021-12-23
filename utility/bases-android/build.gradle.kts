@@ -15,5 +15,4 @@ dependencies {
     implementation(project(Modules.DOMAIN))
     implementation(project(Modules.CORE))
     implementation(project(Modules.Utility.BASES))
-    implementation(project(Modules.Utility.BASES_ANDROID))
 }

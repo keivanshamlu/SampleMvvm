@@ -1,10 +1,9 @@
 import androidDeps.AppConfig
-import androidDeps.groupDependencies.*
-import groupDependencyModuleLevel.featureModuleBaseDependencies
-import kotlinDeps.groupDependencies.networking
+import androidDeps.groupDeps.room
+import groupDepsModuleLevel.featureModuleBaseDependencies
+import kotlinDeps.groupDeps.networking
 import modules.Modules
-import groupConfigs.androidApp
-import groupDependencyModuleLevel.baseDependenciesAndroid
+import configs.androidApp
 
 plugins {
     GradlePluginId.apply {
@@ -29,10 +28,7 @@ dependencies {
     Modules.Feature.run {
         implementation(project(FEATURE_ONE))
     }
-    baseDependenciesAndroid()
     featureModuleBaseDependencies()
     room()
     networking()
-    daggerAssisted()
-    glide()
 }

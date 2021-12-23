@@ -1,7 +1,7 @@
-package test.groupDependencies
+package testDeps.groupDeps
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
-import test.Test
+import testDeps.Test
 import utility.testImplementation
 import utility.androidTestImplementation
 import androidDeps.AndroidX

@@ -1,7 +1,5 @@
-import androidDeps.groupDependencies.room
-import groupConfigs.androidLib
-import groupDependencyModuleLevel.baseDependenciesAndroid
-import groupDependencyModuleLevel.featureModuleBaseDependencies
+import androidDeps.groupDeps.room
+import configs.androidLib
 import modules.Modules
 
 plugins {
@@ -18,7 +16,5 @@ dependencies {
     implementation(project(Modules.Data.DATA))
     implementation(project(Modules.Utility.BASES))
 
-    baseDependenciesAndroid()
-    featureModuleBaseDependencies()
     room()
 }

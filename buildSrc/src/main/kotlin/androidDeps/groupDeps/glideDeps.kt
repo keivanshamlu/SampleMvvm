@@ -1,4 +1,4 @@
-package androidDeps.groupDependencies
+package androidDeps.groupDeps
 
 import androidDeps.AndroidX.Glide
 import org.gradle.api.artifacts.dsl.DependencyHandler
