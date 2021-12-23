@@ -10,7 +10,6 @@ buildscript {
             classpath(ANDROID_GRADLE)
             classpath(KOTLIN_GRADLE)
             classpath(SAFE_ARGS)
-            classpath(HILT)
         }
     }
 }

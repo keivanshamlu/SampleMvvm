@@ -13,7 +13,7 @@ fun DependencyHandler.daggerKotlin() {
 }
 fun DependencyHandler.daggerAndroid() {
     DependencyInjection.Dagger.run {
-        implementation(runtime)
+        daggerKotlin()
         implementation(android)
         implementation(android_support)
         kapt(compiler)

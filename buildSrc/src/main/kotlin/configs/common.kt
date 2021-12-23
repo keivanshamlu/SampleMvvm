@@ -34,10 +34,10 @@ fun Project.androidLib(
             AppConfig.run {
                 versionCode = vCode
                 versionName = vName
-                default?.invoke(this@defaultConfig)
                 minSdk = minimumSdkVersion
                 targetSdk = targettSdkVersion
                 testInstrumentationRunner = androidTestInstrumentation
+                default?.invoke(this@defaultConfig)
             }
         }
         compileOptions {

@@ -3,29 +3,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
 }
-
-gradlePlugin {
-    plugins {
-        register("common-binary-plugin") {
-            id = "common-binary-plugin"
-            implementationClass = "com.ckundr.plugins.CommonBinaryPlugin"
-        }
-    }
-}
-
 buildscript {
-
     repositories {
         google()
     }
-
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
     }
 }
-
 repositories {
     google()
     mavenCentral()

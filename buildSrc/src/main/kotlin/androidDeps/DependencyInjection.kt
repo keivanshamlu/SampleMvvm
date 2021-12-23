@@ -2,12 +2,6 @@ package androidDeps
 
 object DependencyInjection {
 
-    object Hilt {
-
-        const val version = "2.38.1"
-        const val hiltAndroid = "com.google.dagger:hilt-android:$version"
-        const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$version"
-    }
     object Dagger {
         private const val version = "2.40.5"
         const val runtime = "com.google.dagger:dagger:$version"
